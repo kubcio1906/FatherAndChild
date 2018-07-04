@@ -14,15 +14,18 @@ public class FatherEntity {
     @Id
     @GeneratedValue
     private int id;
+    @Column(name = "first_name")
     private String firstName;
-    @Type(type="com.hibernate.samples.type.LocalDateTimeUserType")
     @Column(name = "birth_date")
-
-    private LocalDateTime birthDate;
+    private String birthDate;
+    @Column(name = "second_name")
     private String secondName;
+    @Column(name = "pesel")
     private String pesel;
+//    @Column(name = "family_id")
+//    private int familyId;
 
-    public FatherEntity(String firstName, LocalDateTime birthDate, String secondName, String pesel) {
+    public FatherEntity(String firstName, String birthDate, String secondName, String pesel) {
         this.firstName = firstName;
         this.birthDate = birthDate;
         this.secondName = secondName;
@@ -32,6 +35,8 @@ public class FatherEntity {
     public FatherEntity() {
 
     }
+
+
 
     public int getId() {
         return id;
@@ -49,11 +54,11 @@ public class FatherEntity {
         this.firstName = firstName;
     }
 
-    public LocalDateTime getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDateTime birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

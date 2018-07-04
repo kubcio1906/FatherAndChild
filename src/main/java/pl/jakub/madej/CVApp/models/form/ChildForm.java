@@ -9,11 +9,18 @@ public class ChildForm {
     private String secondName;
     private String pesel;
 
-    public ChildForm(String firstName, String sex, String secondName, String pesel) {
+
+    public ChildForm(String firstName, String sex, String secondName, String pesel,int fatherId) {
         this.firstName = firstName;
         this.sex = sex;
         this.secondName = secondName;
         this.pesel = pesel;
+
+    }
+
+
+    public ChildForm() {
+
     }
 
     public String getFirstName() {

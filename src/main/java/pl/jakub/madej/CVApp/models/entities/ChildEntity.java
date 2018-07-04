@@ -2,10 +2,8 @@ package pl.jakub.madej.CVApp.models.entities;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.security.SecureRandom;
 
 @Entity
 @Table(name="t_child")
@@ -13,11 +11,15 @@ import javax.persistence.Table;
 public class ChildEntity {
 
         @Id
+        @GeneratedValue
         private int id;
         private String firstName;
         private String sex;
         private String secondName;
         private String pesel;
+        @Column(name = "father_id")
+        @GeneratedValue
+        private int fatherId;
 
         public ChildEntity( String firstName, String sex, String secondName, String pesel) {
 
@@ -25,11 +27,15 @@ public class ChildEntity {
                 this.sex = sex;
                 this.secondName = secondName;
                 this.pesel = pesel;
+
+
         }
 
         public ChildEntity() {
 
         }
+
+
 
 
         public String getFirstName() {

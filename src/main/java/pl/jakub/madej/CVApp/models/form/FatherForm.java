@@ -2,6 +2,7 @@ package pl.jakub.madej.CVApp.models.form;
 
 import lombok.Data;
 
+import javax.swing.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -9,15 +10,19 @@ import java.util.Date;
 public class FatherForm {
   //  private int id;
     private String firstName;
-    private LocalDateTime birthDate;
+    private String birthDate;
     private String secondName;
     private String pesel;
 
-  public FatherForm(String firstName, LocalDateTime birthDate, String secondName, String pesel) {
+  public FatherForm(String firstName, String birthDate, String secondName, String pesel) {
     this.firstName = firstName;
     this.birthDate = birthDate;
     this.secondName = secondName;
     this.pesel = pesel;
+  }
+
+  public FatherForm() {
+
   }
 
   public String getFirstName() {
@@ -28,11 +33,11 @@ public class FatherForm {
     this.firstName = firstName;
   }
 
-  public LocalDateTime getBirthDate() {
+  public String getBirthDate() {
     return birthDate;
   }
 
-  public void setBirthDate(LocalDateTime birthDate) {
+  public void setBirthDate(String birthDate) {
     this.birthDate = birthDate;
   }
 

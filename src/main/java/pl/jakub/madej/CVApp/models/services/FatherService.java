@@ -9,10 +9,11 @@ import pl.jakub.madej.CVApp.models.form.FatherForm;
 import pl.jakub.madej.CVApp.models.respositories.FamilyRespository;
 import pl.jakub.madej.CVApp.models.respositories.FatherRespository;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 
 @Service
-
+@Transactional
 public class FatherService {
     @Autowired
     FatherRespository fatherRespository;
@@ -22,6 +23,7 @@ public class FatherService {
         newFather.setFirstName(fatherForm.getFirstName());
         newFather.setSecondName(fatherForm.getSecondName());
         newFather.setBirthDate(fatherForm.getBirthDate());
+        newFather.setPesel(fatherForm.getPesel());
         fatherRespository.save(newFather);
 
     }

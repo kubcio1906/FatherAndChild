@@ -1,4 +1,4 @@
-package pl.jakub.madej.CVApp.models.controlers;
+package pl.jakub.madej.CVApp.controlers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,18 +20,19 @@ public class AddFatherToFamily {
         return "AddFather";
     }
     @PostMapping("addFather")
-    public String addFather(Model model, @RequestParam("first_name") String firstName,
+    public String addFather( @RequestParam("first_name") String firstName,
                                   @RequestParam("birth_date") String birthDate,
                                   @RequestParam("second_name") String secondName,
-                                  @RequestParam("pesel") String pesel,
-                                    @ModelAttribute FatherForm fatherForm){
-        if(birthDate!=null) {
+                                  @RequestParam("pesel") String pesel
+                                    ){
 
-            fatherService.addFatherToDB(fatherForm);
-            return "AddChild";
-        }else{
-            return "AddFather";
-        }
+       final FatherForm fatherForm = new FatherForm();
+        fatherForm.setFirstName(firstName);
+        fatherForm.setSecondName(secondName);
+        fatherForm.setBirthDate(birthDate);
+        fatherForm.setPesel(pesel);
+        fatherService.addFatherToDB(fatherForm);
 
+return "AddChild";
     }
 }

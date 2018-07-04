@@ -1,6 +1,7 @@
-package pl.jakub.madej.CVApp.models.controlers;
+package pl.jakub.madej.CVApp.models.services;
 
-import org.springframework.stereotype.Controller;
+
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -9,10 +10,9 @@ import pl.jakub.madej.CVApp.models.entities.FatherEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+@Service
 public class ReadFather {
-    @GetMapping("fatherList")
-    @ResponseBody
+
     public List<FatherEntity> fatherEntityList(){
 
         List<FatherEntity> fatherEntities = new ArrayList<>();
