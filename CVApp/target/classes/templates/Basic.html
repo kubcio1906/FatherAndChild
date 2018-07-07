@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" action="/createFamily" th:object="${findForm}">
+    <input type="button" value="Add Family" onclick="location.href='/addFather';" ></input>
+    <input type="button"  value="Find" onclick="location.href='/findPersonResult';"></input>
+    <input type="submit" value="Delete"  ></input>
+</form>
+
+</body>
+</html>

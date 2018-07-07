@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Find person</title>
+</head>
+<body>
+<form  th:object="${childForm}" action="/findPersonResult" method="post">
+    <input type="text" th:field="*{firstName}" placeholder="firstName"> <br/>
+    <input type="submit" value="Find">
+</form>
+<h2>Persons</h2>
+<form action="/findPersonResult" method="get">
+    <div id="show" >
+        <h1 th:text="${firstName} "></h1>
+        <h1 th:text="${secondName} "></h1>
+        <h1 th:text="${pesel} "></h1>
+        <h1 th:text="${sex} "></h1>
+
+    </div>
+</form>
+</body>
+</html>
